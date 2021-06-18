@@ -1,0 +1,31 @@
+									Quick Sort Algo
+
+											  pivot
+					A =	[12, 3, 34, 5, 32, 67, 23]  =>  [12, 3, 5 34, 32, 67, 23]  => [12, 3, 5 23, 32, 67, 34]  //after one re
+								pI								  pI
+									i								   	  i
+						start = 0, end = 6 
+				 
+
+quickSort(A , start , end):
+
+	if(start < end)
+		partIndex = partition(A, start, end)
+		quickSort(A, start , partIndex -1)
+		quickSort(A, partIndex + 1, end)
+	
+	
+
+partition(A, start, end): // A , 0 , 6
+	pivot = A[end]		  // 23
+	partIndex = start     // 0
+ 	
+	for(int i = start; i < end; i++):
+		if(A[i] <= pivot):
+			swap(A[i], A[partIndex])
+			partIndex++
+			
+	swap(A[partIndex], A[end])
+	
+	return partIndex
+		

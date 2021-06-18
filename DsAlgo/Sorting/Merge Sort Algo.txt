@@ -1,0 +1,47 @@
+
+A = [12,3,5,32,5,6,7,2]  length = n 
+
+mergeSort(array):
+	n = array.length
+	if(n < 2)			// base condition for recursion
+		return
+		
+	mid = n/2
+	left = array[mid]
+	right = array[n - mid]
+	
+	for(int i = 0; i < mid - 1; i++)
+		left[i] = array[i]
+	
+	for(int i = mid; i < n - 1; i++]
+		right[i] = array[i]
+	
+	mergeSort(left)		// resursively call mergeSort until we got a subarray of length 1.
+	mergeSort(right)
+	merge(array, left, right)
+
+
+
+// merege two arrays left and right in ascending order
+merge(array, left, right):
+	nL = left.length
+	nR = right.length
+
+	leftPointer = rightPointer = arrayPointer = 0
+
+	while(leftPointer < nL && rightPointer < nR):
+		if(left[leftPointer] > right[rightPointer]):
+			array[arrayPointer++] = right[rightPointer++]
+		
+		else:
+			array[arrayPointer++] = left[leftPointer++]
+
+		
+	while(leftPointer < nL):
+		array[arrayPointer++] = left[leftPointer++]
+	
+		
+	while(rightPointer < nR):
+		array[arrayPointer++] = right[rightPointer++]
+	
+
