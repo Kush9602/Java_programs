@@ -39,10 +39,4 @@ public class MazePathWithJump {
         
         return paths;
     }
-
-
-    private static void printMazePathWithJump(int m, int n, int x, int y, String ans){
-
-        
-    }
 }
