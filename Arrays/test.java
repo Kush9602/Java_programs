@@ -2,10 +2,26 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class test {
+    static String vovel = "aeiou";
+
     public static void main(String[] args) {
-        int arr[] = { 5, 5, 10, 8, -1, 16, -3, 14, -10, -10 };
-        int k = 4;
-        maximixeSum(arr, k);
+        // int arr[] = { 5, 5, 10, 8, -1, 16, -3, 14, -10, -10 };
+        // int k = 4;
+        // maximixeSum(arr, k);
+        System.out.println(Integer.toString(200).length());
+        // String str = "weak";
+        // magicWord(str);
+    }
+
+    static void magicWord(String str) {
+        String vov = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (vovel.contains("" + str.charAt(i))) {
+                vov += str.charAt(i);
+            }
+        }
+
+        System.out.println(vov);
     }
 
     static void maximixeSum(int[] arr, int k) {

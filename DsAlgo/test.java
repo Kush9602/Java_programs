@@ -65,6 +65,11 @@ public class test {
             arr[arrPointer++] = left[rightPointer++];
     }
 
+    // Quick sort
+    static void quickSort(int[] arr) {
+
+    }
+
     static void swap(int[] arr, int a, int b) {
         arr[a] = arr[a] ^ arr[b];
         arr[b] = arr[a] ^ arr[b];
