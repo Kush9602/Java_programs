@@ -1,35 +1,60 @@
 // [1,2,3,-1,-2,-3] => [-1,1,-2,2,-3,3]
 
 public class RearrangeArray {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         ArrayClasses ob = new ArrayClasses();
         int array[] = ob.getArray();
 
         int rearrange[] = reArrange(array);
-        for(int i = 0; i < rearrange.length; i++)
-            System.out.print(rearrange[i] + " ");
-    } 
 
-    static int[] reArrange(int arr[]){
-        int point = 0, c = 0;
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] >= 0)
-                continue;
-            else if(arr[i] < 0){
-                arr = swap(arr,point,c);
-                point = point + 2;
+        for (int i = 0; i < rearrange.length; i++)
+            System.out.print(rearrange[i] + " ");
+    }
+
+    static int[] reArrange(int arr[]) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0) {
+                if (arr[i] < 0)
+                    continue;
+                int nextEle = nextInverse(arr, i);
+                if (nextEle == -1)
+                    return arr;
+                rotateRight(arr, i, nextEle);
+            } else {
+                if (arr[i] >= 0)
+                    continue;
+                int nextEle = nextInverse(arr, i);
+                if (nextEle == -1)
+                    return arr;
+                rotateRight(arr, i, nextEle);
             }
-            c++;
         }
+
         return arr;
     }
 
-    static int[] swap(int ar[] , int p1, int p2){
-        int temp = ar[p1];
-        ar[p1] = ar[p2];
-        ar[p2] = temp;
+    static int nextInverse(int[] arr, int i) {
+        if (arr[i] >= 0) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < 0)
+                    return j;
+            }
+        } else {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] >= 0)
+                    return j;
+            }
+        }
+        return -1;
+    }
 
-        return ar;
+    static void rotateRight(int[] arr, int start, int end) {
+        int temp = arr[end];
+        for (int i = end; i > start; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[start] = temp;
     }
 }

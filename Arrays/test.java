@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 
 public class test {
     static String vovel = "aeiou";
@@ -8,9 +7,10 @@ public class test {
         // int arr[] = { 5, 5, 10, 8, -1, 16, -3, 14, -10, -10 };
         // int k = 4;
         // maximixeSum(arr, k);
-        System.out.println(Integer.toString(200).length());
+        // System.out.println(Integer.toString(200).length());
         // String str = "weak";
         // magicWord(str);
+
     }
 
     static void magicWord(String str) {
