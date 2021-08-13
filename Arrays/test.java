@@ -4,13 +4,35 @@ public class test {
     static String vovel = "aeiou";
 
     public static void main(String[] args) {
-        // int arr[] = { 5, 5, 10, 8, -1, 16, -3, 14, -10, -10 };
+        int a[] = { 1, 4, 45, 6, 0, 19 };
+        int n = 6, k = 51;
         // int k = 4;
         // maximixeSum(arr, k);
         // System.out.println(Integer.toString(200).length());
         // String str = "weak";
         // magicWord(str);
+        int count = 0;
+        int minCount = Integer.MAX_VALUE;
+        int start = 0;
+        int sum = 0;
 
+        outer: for (int i = 0; i < n; i++) {
+            sum += a[i];
+            count++;
+            while (sum > k) {
+                if (sum - a[start] > k) {
+                    sum -= a[start];
+                    start++;
+                    count--;
+                    continue;
+                }
+                minCount = Math.min(count, minCount);
+                count = 0;
+                continue outer;
+            }
+        }
+
+        System.out.println(minCount);
     }
 
     static void magicWord(String str) {

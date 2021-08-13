@@ -1,3 +1,5 @@
+
+// we can only buy once and sell once.
 public class BuyAndSellStocks1 {
     public static void main(String[] args) {
         int[] stocks = { 7, 1, 5, 3, 6, 4 };
