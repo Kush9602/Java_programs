@@ -12,7 +12,7 @@ public class RowWithMaxOne {
     // Time complexity = O(m+n)
     static void rowWithMax1s(int arr[][]) {
         int count = 0;
-        int row = -1;
+        int row = Integer.MAX_VALUE;
         int i = 0, j = arr[0].length - 1;
 
         while (i < arr.length && j >= 0) {
@@ -23,7 +23,7 @@ public class RowWithMaxOne {
             } else
                 i++;
         }
-        if (row == -1) {
+        if (row == Integer.MAX_VALUE) {
             System.out.println("No row with 1");
             return;
         }
