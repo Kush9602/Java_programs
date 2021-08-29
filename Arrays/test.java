@@ -4,35 +4,23 @@ public class test {
     static String vovel = "aeiou";
 
     public static void main(String[] args) {
-        int a[] = { 1, 4, 45, 6, 0, 19 };
-        int n = 6, k = 51;
-        // int k = 4;
-        // maximixeSum(arr, k);
-        // System.out.println(Integer.toString(200).length());
-        // String str = "weak";
-        // magicWord(str);
-        int count = 0;
-        int minCount = Integer.MAX_VALUE;
-        int start = 0;
-        int sum = 0;
+        // int a[] = { 1, 4, 45, 6, 0, 19 };
+        // int n = 6, k = 51;
+        // // int k = 4;
+        // // maximixeSum(arr, k);
+        // // System.out.println(Integer.toString(200).length());
+        // // String str = "weak";
+        // // magicWord(str);
 
-        outer: for (int i = 0; i < n; i++) {
-            sum += a[i];
-            count++;
-            while (sum > k) {
-                if (sum - a[start] > k) {
-                    sum -= a[start];
-                    start++;
-                    count--;
-                    continue;
-                }
-                minCount = Math.min(count, minCount);
-                count = 0;
-                continue outer;
-            }
-        }
+        String str = "abs asd  assfda    sddsfad";
+        int max = Integer.MIN_VALUE;
 
-        System.out.println(minCount);
+        String[] arr = str.split(" ");
+
+        for (String str1 : arr)
+            max = Math.max(max, str1.length());
+
+        System.out.println(max);
     }
 
     static void magicWord(String str) {
