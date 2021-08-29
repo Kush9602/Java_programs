@@ -43,7 +43,7 @@ public class MaxIndex {
 
         outer: for (int i = 0; i < arr.length; i++) {
             for (int j = arr.length - 1; j > i; j--) {
-                if (arr[j] > arr[i]) {
+                if (arr[j] >= arr[i]) {
                     maxDiff = Math.max(maxDiff, j - i);
                     continue outer;
                 }
